@@ -1,0 +1,34 @@
+Command: /usr/bin/renode --disable-xwt --console -e include script.resc
+Return code: 0
+Output:
+10:55:57.7281 [INFO] Loaded monitor commands from: /opt/renode/scripts/monitor.py
+[0mRenode, version 1.15.1.23066 (bef0c7b3-202406141248)
+
+
+[31;1m(monitor) [0minclude script.resc
+
+[;031mBad parameters for command include script.resc
+[0minclude [ i ]
+
+loads a Monitor script, Python code, platform file or a plugin class.
+
+
+To load a script you have to provide an existing file name.
+
+
+
+Supported file formats:
+
+*.cs   - plugin file
+
+*.py   - python script
+
+*.repl - platform description file
+
+other  - monitor script
+
+
+
+[31;1m(monitor) [0m
+Error:
+

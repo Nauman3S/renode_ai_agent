@@ -1,0 +1,130 @@
+Command: /usr/bin/renode --plain -e i @script.resc
+Return code: 1
+Output:
+10:05:22.1645 [WARNING] Couldn't start UI - falling back to console mode
+10:05:22.3665 [INFO] Loaded monitor commands from: /opt/renode/scripts/monitor.py
+Renode, version 1.15.1.23066 (bef0c7b3-202406141248)
+
+
+(monitor) i @script.resc
+
+10:05:22.4528 [INFO] Including script: /app/uploads/55e957fb-f6b2-49e6-98b4-4fe45b230d28/script.resc
+10:05:22.4601 [INFO] System bus created.
+
+Error:
+Fatal error:
+Exception has been thrown by the target of an invocation.
+  at System.Reflection.RuntimeConstructorInfo.InternalInvoke (System.Object obj, System.Object[] parameters, System.Boolean wrapExceptions) [0x00022] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Reflection.RuntimeConstructorInfo.DoInvoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00089] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Reflection.RuntimeConstructorInfo.Invoke (System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Reflection.ConstructorInfo.Invoke (System.Object[] parameters) [0x00000] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at Antmicro.Renode.PlatformDescription.CreationDriver.CreateAndHandleError (System.Reflection.ConstructorInfo constructor, System.Collections.Generic.IEnumerable`1[T] attributes, System.String friendlyName, Antmicro.Renode.PlatformDescription.Syntax.IWithPosition responsibleSyntaxElement) [0x0004a] in <9d12c3a8829e41c6bdb6fa79bad6674f>:0 
+  at Antmicro.Renode.PlatformDescription.CreationDriver.CreateFromEntry (Antmicro.Renode.PlatformDescription.Syntax.Entry entry) [0x00034] in <9d12c3a8829e41c6bdb6fa79bad6674f>:0 
+  at Antmicro.Renode.PlatformDescription.CreationDriver.ProcessInner (System.String file, System.String source) [0x0006f] in <9d12c3a8829e41c6bdb6fa79bad6674f>:0 
+  at Antmicro.Renode.PlatformDescription.CreationDriver.ProcessFile (System.String path) [0x00031] in <9d12c3a8829e41c6bdb6fa79bad6674f>:0 
+  at Antmicro.Renode.PlatformDescription.UserInterface.PlatformDescriptionMachineExtensions.LoadPlatformDescription (Antmicro.Renode.Core.Machine machine, System.String platformDescriptionFile) [0x00006] in <9d12c3a8829e41c6bdb6fa79bad6674f>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,object,object,object)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00141] in <d22af090bceb4be792f53595cf074724>:0 
+  at Dynamitey.Internal.Optimization.InvokeHelper.InvokeMemberAction (System.Runtime.CompilerServices.CallSite& callsite, System.Type binderType, System.Int32 knownType, Dynamitey.Internal.Optimization.InvokeHelper+LazyBinder binder, Dynamitey.InvokeMemberName name, System.Boolean staticContext, System.Type context, System.String[] argNames, System.Object target, System.Object[] args) [0x000df] in <1d0e1ef63ad2470a9ccec81105ee1302>:0 
+  at Dynamitey.Internal.Optimization.InvokeHelper.InvokeMemberActionCallSite (System.Object target, Dynamitey.InvokeMemberName name, System.Object[] args, System.String[] tArgNames, System.Type tContext, System.Boolean tStaticContext, System.Runtime.CompilerServices.CallSite& callSite) [0x0004f] in <1d0e1ef63ad2470a9ccec81105ee1302>:0 
+  at Dynamitey.Dynamic.InvokeMemberAction (System.Object target, Dynamitey.String_OR_InvokeMemberName name, System.Object[] args) [0x00018] in <1d0e1ef63ad2470a9ccec81105ee1302>:0 
+  at Antmicro.Renode.UserInterface.Monitor.InvokeWithContext (Dynamitey.InvokeContext context, System.Reflection.MethodInfo method, System.Object[] parameters) [0x00023] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.InvokeExtensionMethod (System.Object device, System.Reflection.MethodInfo method, System.Collections.Generic.List`1[T] parameters) [0x0002c] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ExecuteDeviceAction (System.String name, System.Object device, System.Collections.Generic.IEnumerable`1[T] p) [0x002e9] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ProcessDeviceAction (System.Type deviceType, System.String name, System.Collections.Generic.IEnumerable`1[T] p, AntShell.Commands.ICommandInteraction writer) [0x0002b] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ProcessDeviceActionByName (System.String name, System.Collections.Generic.IEnumerable`1[T] p, AntShell.Commands.ICommandInteraction writer) [0x00035] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ExecuteCommand (Antmicro.Renode.UserInterface.Tokenizer.Token[] com, AntShell.Commands.ICommandInteraction writer) [0x00165] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ParseTokens (System.Collections.Generic.IEnumerable`1[T] tokensToParse, AntShell.Commands.ICommandInteraction writer) [0x001df] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.Parse (System.String cmd, AntShell.Commands.ICommandInteraction writer) [0x0019d] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.TryExecuteScript (System.String filename, AntShell.Commands.ICommandInteraction writer) [0x0016e] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.<InitCommands>b__26_6 (System.String x) [0x00000] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Commands.IncludeFileCommand.Run (AntShell.Commands.ICommandInteraction writer, Antmicro.Renode.UserInterface.Tokenizer.PathToken path) [0x000c9] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0007c] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+--- End of stack trace from previous location where exception was thrown ---
+
+  at Antmicro.Renode.UserInterface.Monitor.RunCommand (AntShell.Commands.ICommandInteraction writer, Antmicro.Renode.UserInterface.Commands.Command command, System.Collections.Generic.IList`1[T] parameters) [0x00452] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ExecuteCommand (Antmicro.Renode.UserInterface.Tokenizer.Token[] com, AntShell.Commands.ICommandInteraction writer) [0x001f3] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ParseTokens (System.Collections.Generic.IEnumerable`1[T] tokensToParse, AntShell.Commands.ICommandInteraction writer) [0x001df] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.Parse (System.String cmd, AntShell.Commands.ICommandInteraction writer) [0x0019d] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.HandleCommand (System.String cmd, AntShell.Commands.ICommandInteraction ci) [0x00000] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at AntShell.Shell.HandleCommand (System.String cmd, AntShell.Commands.ICommandInteraction ic) [0x000bd] in <a7340fbd231d468781ca47b3e1e38322>:0 
+  at AntShell.CommandLine.HandleControlSequence (AntShell.Helpers.ControlSequence seq) [0x00aa1] in <a7340fbd231d468781ca47b3e1e38322>:0 
+  at AntShell.Terminal.NavigableTerminalEmulator.HandleInput (System.Object input) [0x0002e] in <a7340fbd231d468781ca47b3e1e38322>:0 
+  at AntShell.Terminal.NavigableTerminalEmulator.Run (System.Boolean stopOnError) [0x00017] in <a7340fbd231d468781ca47b3e1e38322>:0 
+  at AntShell.Shell.Start (System.Boolean stopOnError) [0x00102] in <a7340fbd231d468781ca47b3e1e38322>:0 
+  at Antmicro.Renode.UI.CommandLineInterface+<>c__DisplayClass0_1.<Run>b__3 (System.Object x) [0x00000] in <63d9197c78ab40e3a23141134855ddc8>:0 
+  at System.Threading.ThreadHelper.ThreadStart_Context (System.Object state) [0x0002c] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x0008d] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state) [0x00031] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Threading.ThreadHelper.ThreadStart (System.Object obj) [0x00012] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+Inner exception:
+Error while opening dynamic library: /tmp/renode-19/0-Antmicro.Renode.translate-arm-m-le.so: cannot open shared object file: No such file or directory
+  at Antmicro.Renode.Utilities.SharedLibraries.HandleError (System.String operation) [0x00031] in <d6b83c9be3204b3e88ab5b3fc57619a3>:0 
+  at Antmicro.Renode.Utilities.SharedLibraries.LoadLibrary (System.String path) [0x0000a] in <d6b83c9be3204b3e88ab5b3fc57619a3>:0 
+  at Antmicro.Renode.Utilities.Binding.NativeBinder..ctor (Antmicro.Renode.IEmulationElement classToBind, System.String libraryFile) [0x00025] in <d6b83c9be3204b3e88ab5b3fc57619a3>:0 
+  at Antmicro.Renode.Peripherals.CPU.TranslationCPU.Init () [0x000c4] in <85303fa2703c4b4eb0719350b9eeba3b>:0 
+  at Antmicro.Renode.Peripherals.CPU.TranslationCPU..ctor (System.UInt32 id, System.String cpuType, Antmicro.Renode.Core.IMachine machine, ELFSharp.ELF.Endianess endianness, Antmicro.Renode.Peripherals.CPU.CpuBitness bitness) [0x000a2] in <85303fa2703c4b4eb0719350b9eeba3b>:0 
+  at Antmicro.Renode.Peripherals.CPU.Arm..ctor (System.String cpuType, Antmicro.Renode.Core.IMachine machine, System.UInt32 cpuId, ELFSharp.ELF.Endianess endianness, System.Nullable`1[T] numberOfMPURegions, Antmicro.Renode.Peripherals.Miscellaneous.ArmSignalsUnit signalsUnit) [0x00060] in <bb1bc27d35fb44bf95de96c10492f44b>:0 
+  at Antmicro.Renode.Peripherals.CPU.CortexM..ctor (System.String cpuType, Antmicro.Renode.Core.IMachine machine, Antmicro.Renode.Peripherals.IRQControllers.NVIC nvic, System.UInt32 id, ELFSharp.ELF.Endianess endianness, System.Nullable`1[T] fpuInterruptNumber, System.Nullable`1[T] numberOfMPURegions) [0x00007] in <440ca0f0281f4d238ae9a3bcb7bbb367>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeConstructorInfo.InternalInvoke(System.Reflection.RuntimeConstructorInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeConstructorInfo.InternalInvoke (System.Object obj, System.Object[] parameters, System.Boolean wrapExceptions) [0x00008] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+
+[ERROR] FATAL UNHANDLED EXCEPTION: System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: Error while opening dynamic library: /tmp/renode-19/0-Antmicro.Renode.translate-arm-m-le.so: cannot open shared object file: No such file or directory
+  at Antmicro.Renode.Utilities.SharedLibraries.HandleError (System.String operation) [0x00031] in <d6b83c9be3204b3e88ab5b3fc57619a3>:0 
+  at Antmicro.Renode.Utilities.SharedLibraries.LoadLibrary (System.String path) [0x0000a] in <d6b83c9be3204b3e88ab5b3fc57619a3>:0 
+  at Antmicro.Renode.Utilities.Binding.NativeBinder..ctor (Antmicro.Renode.IEmulationElement classToBind, System.String libraryFile) [0x00025] in <d6b83c9be3204b3e88ab5b3fc57619a3>:0 
+  at Antmicro.Renode.Peripherals.CPU.TranslationCPU.Init () [0x000c4] in <85303fa2703c4b4eb0719350b9eeba3b>:0 
+  at Antmicro.Renode.Peripherals.CPU.TranslationCPU..ctor (System.UInt32 id, System.String cpuType, Antmicro.Renode.Core.IMachine machine, ELFSharp.ELF.Endianess endianness, Antmicro.Renode.Peripherals.CPU.CpuBitness bitness) [0x000a2] in <85303fa2703c4b4eb0719350b9eeba3b>:0 
+  at Antmicro.Renode.Peripherals.CPU.Arm..ctor (System.String cpuType, Antmicro.Renode.Core.IMachine machine, System.UInt32 cpuId, ELFSharp.ELF.Endianess endianness, System.Nullable`1[T] numberOfMPURegions, Antmicro.Renode.Peripherals.Miscellaneous.ArmSignalsUnit signalsUnit) [0x00060] in <bb1bc27d35fb44bf95de96c10492f44b>:0 
+  at Antmicro.Renode.Peripherals.CPU.CortexM..ctor (System.String cpuType, Antmicro.Renode.Core.IMachine machine, Antmicro.Renode.Peripherals.IRQControllers.NVIC nvic, System.UInt32 id, ELFSharp.ELF.Endianess endianness, System.Nullable`1[T] fpuInterruptNumber, System.Nullable`1[T] numberOfMPURegions) [0x00007] in <440ca0f0281f4d238ae9a3bcb7bbb367>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeConstructorInfo.InternalInvoke(System.Reflection.RuntimeConstructorInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeConstructorInfo.InternalInvoke (System.Object obj, System.Object[] parameters, System.Boolean wrapExceptions) [0x00008] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeConstructorInfo.InternalInvoke (System.Object obj, System.Object[] parameters, System.Boolean wrapExceptions) [0x00022] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Reflection.RuntimeConstructorInfo.DoInvoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00089] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Reflection.RuntimeConstructorInfo.Invoke (System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Reflection.ConstructorInfo.Invoke (System.Object[] parameters) [0x00000] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at Antmicro.Renode.PlatformDescription.CreationDriver.CreateAndHandleError (System.Reflection.ConstructorInfo constructor, System.Collections.Generic.IEnumerable`1[T] attributes, System.String friendlyName, Antmicro.Renode.PlatformDescription.Syntax.IWithPosition responsibleSyntaxElement) [0x0004a] in <9d12c3a8829e41c6bdb6fa79bad6674f>:0 
+  at Antmicro.Renode.PlatformDescription.CreationDriver.CreateFromEntry (Antmicro.Renode.PlatformDescription.Syntax.Entry entry) [0x00034] in <9d12c3a8829e41c6bdb6fa79bad6674f>:0 
+  at Antmicro.Renode.PlatformDescription.CreationDriver.ProcessInner (System.String file, System.String source) [0x0006f] in <9d12c3a8829e41c6bdb6fa79bad6674f>:0 
+  at Antmicro.Renode.PlatformDescription.CreationDriver.ProcessFile (System.String path) [0x00031] in <9d12c3a8829e41c6bdb6fa79bad6674f>:0 
+  at Antmicro.Renode.PlatformDescription.UserInterface.PlatformDescriptionMachineExtensions.LoadPlatformDescription (Antmicro.Renode.Core.Machine machine, System.String platformDescriptionFile) [0x00006] in <9d12c3a8829e41c6bdb6fa79bad6674f>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,object,object,object)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00141] in <d22af090bceb4be792f53595cf074724>:0 
+  at Dynamitey.Internal.Optimization.InvokeHelper.InvokeMemberAction (System.Runtime.CompilerServices.CallSite& callsite, System.Type binderType, System.Int32 knownType, Dynamitey.Internal.Optimization.InvokeHelper+LazyBinder binder, Dynamitey.InvokeMemberName name, System.Boolean staticContext, System.Type context, System.String[] argNames, System.Object target, System.Object[] args) [0x000df] in <1d0e1ef63ad2470a9ccec81105ee1302>:0 
+  at Dynamitey.Internal.Optimization.InvokeHelper.InvokeMemberActionCallSite (System.Object target, Dynamitey.InvokeMemberName name, System.Object[] args, System.String[] tArgNames, System.Type tContext, System.Boolean tStaticContext, System.Runtime.CompilerServices.CallSite& callSite) [0x0004f] in <1d0e1ef63ad2470a9ccec81105ee1302>:0 
+  at Dynamitey.Dynamic.InvokeMemberAction (System.Object target, Dynamitey.String_OR_InvokeMemberName name, System.Object[] args) [0x00018] in <1d0e1ef63ad2470a9ccec81105ee1302>:0 
+  at Antmicro.Renode.UserInterface.Monitor.InvokeWithContext (Dynamitey.InvokeContext context, System.Reflection.MethodInfo method, System.Object[] parameters) [0x00023] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.InvokeExtensionMethod (System.Object device, System.Reflection.MethodInfo method, System.Collections.Generic.List`1[T] parameters) [0x0002c] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ExecuteDeviceAction (System.String name, System.Object device, System.Collections.Generic.IEnumerable`1[T] p) [0x002e9] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ProcessDeviceAction (System.Type deviceType, System.String name, System.Collections.Generic.IEnumerable`1[T] p, AntShell.Commands.ICommandInteraction writer) [0x0002b] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ProcessDeviceActionByName (System.String name, System.Collections.Generic.IEnumerable`1[T] p, AntShell.Commands.ICommandInteraction writer) [0x00035] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ExecuteCommand (Antmicro.Renode.UserInterface.Tokenizer.Token[] com, AntShell.Commands.ICommandInteraction writer) [0x00165] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ParseTokens (System.Collections.Generic.IEnumerable`1[T] tokensToParse, AntShell.Commands.ICommandInteraction writer) [0x001df] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.Parse (System.String cmd, AntShell.Commands.ICommandInteraction writer) [0x0019d] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.TryExecuteScript (System.String filename, AntShell.Commands.ICommandInteraction writer) [0x0016e] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.<InitCommands>b__26_6 (System.String x) [0x00000] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Commands.IncludeFileCommand.Run (AntShell.Commands.ICommandInteraction writer, Antmicro.Renode.UserInterface.Tokenizer.PathToken path) [0x000c9] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0007c] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+--- End of stack trace from previous location where exception was thrown ---
+
+  at Antmicro.Renode.UserInterface.Monitor.RunCommand (AntShell.Commands.ICommandInteraction writer, Antmicro.Renode.UserInterface.Commands.Command command, System.Collections.Generic.IList`1[T] parameters) [0x00452] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ExecuteCommand (Antmicro.Renode.UserInterface.Tokenizer.Token[] com, AntShell.Commands.ICommandInteraction writer) [0x001f3] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.ParseTokens (System.Collections.Generic.IEnumerable`1[T] tokensToParse, AntShell.Commands.ICommandInteraction writer) [0x001df] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.Parse (System.String cmd, AntShell.Commands.ICommandInteraction writer) [0x0019d] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at Antmicro.Renode.UserInterface.Monitor.HandleCommand (System.String cmd, AntShell.Commands.ICommandInteraction ci) [0x00000] in <d5d3079384cc4d678fa1049255a579cb>:0 
+  at AntShell.Shell.HandleCommand (System.String cmd, AntShell.Commands.ICommandInteraction ic) [0x000bd] in <a7340fbd231d468781ca47b3e1e38322>:0 
+  at AntShell.CommandLine.HandleControlSequence (AntShell.Helpers.ControlSequence seq) [0x00aa1] in <a7340fbd231d468781ca47b3e1e38322>:0 
+  at AntShell.Terminal.NavigableTerminalEmulator.HandleInput (System.Object input) [0x0002e] in <a7340fbd231d468781ca47b3e1e38322>:0 
+  at AntShell.Terminal.NavigableTerminalEmulator.Run (System.Boolean stopOnError) [0x00017] in <a7340fbd231d468781ca47b3e1e38322>:0 
+  at AntShell.Shell.Start (System.Boolean stopOnError) [0x00102] in <a7340fbd231d468781ca47b3e1e38322>:0 
+  at Antmicro.Renode.UI.CommandLineInterface+<>c__DisplayClass0_1.<Run>b__3 (System.Object x) [0x00000] in <63d9197c78ab40e3a23141134855ddc8>:0 
+  at System.Threading.ThreadHelper.ThreadStart_Context (System.Object state) [0x0002c] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x0008d] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state) [0x00031] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+  at System.Threading.ThreadHelper.ThreadStart (System.Object obj) [0x00012] in <12b418a7818c4ca0893feeaaf67f1e7f>:0 
+

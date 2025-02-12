@@ -1,0 +1,45 @@
+using sysbus
+$name?="stm32l476g_disco_3"
+mach create $name
+
+machine LoadPlatformDescription @platform.repl
+machine EnableProfiler $ORIGIN/metrics.dump
+
+showAnalyzer sysbus.usart1
+sysbus.usart1 RecordToAsciinema $ORIGIN/output_usart1.asciinema
+
+
+showAnalyzer sysbus.usart2
+sysbus.usart2 RecordToAsciinema $ORIGIN/output.asciinema
+
+python "import _random"
+python "rand = _random.Random()"
+$id1 = `python "print rand.getrandbits(32)"`
+python "print('hello')"
+
+
+logLevel -1 sysbus
+sysbus LogPeripheralAccess sysbus.usart1
+sysbus LogPeripheralAccess sysbus.usart2
+sysbus LogAllPeripheralsAccess true
+sysbus.cpu0 LogFunctionNames true
+
+logFile $ORIGIN/logs.log
+logLevel -1 usart1.log sysbus.usart1
+logLevel -1 usart2.log sysbus.usart2
+
+macro reset
+"""
+    sysbus LoadELF @testbench.elf
+    sysbus WriteDoubleWord 0x40004400 $id1
+    sysbus WriteDoubleWord 0x40004000 0x48
+
+    $bytes = [0x55, 0xAA, 0xFF]  # Example data points to send
+
+# Loop through each byte and write it to the UART
+foreach $byte in $bytes {
+    sysbus.uart1 WriteByte $byte
+}
+"""
+
+runMacro $reset

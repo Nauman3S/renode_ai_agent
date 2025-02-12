@@ -1,0 +1,22 @@
+services:
+  backend:
+    platform: linux/arm64
+    build:
+      context: ./backend
+    ports:
+      - "9001:8000"
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/logs:/app/logs
+
+  frontend:
+    platform: linux/arm64
+    build:
+      context: ./frontend
+    ports:
+      - "4001:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
