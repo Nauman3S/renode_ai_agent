@@ -1,7 +1,7 @@
+import os
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-import os
 import subprocess
 import uuid
 import logging
@@ -13,17 +13,18 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-# Add CORS middleware
+# Update CORS settings for production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
+    allow_origins=["http://localhost", "http://localhost:80"],
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-UPLOAD_DIR = os.path.abspath("uploads")
-LOGS_DIR = os.path.abspath("logs")
+# Update file paths to be relative to the script
+UPLOAD_DIR = os.path.join(os.path.dirname(__file__), "uploads")
+LOGS_DIR = os.path.join(os.path.dirname(__file__), "logs")
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs(LOGS_DIR, exist_ok=True)
@@ -145,3 +146,7 @@ async def get_logs():
             logs = log_file.readlines()
 
     return {"logs": logs}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=9001)

@@ -36,13 +36,12 @@ export default function Home() {
             formData.append("resc_file", rescFile);
             formData.append("elf_file", elfFile);
 
-            const response = await fetch("http://localhost:9001/upload/", {
+            const response = await fetch("/upload/", {
                 method: "POST",
                 body: formData,
                 headers: {
                     'Accept': 'application/json',
                 },
-                mode: 'cors',
             });
 
             if (!response.ok) {
