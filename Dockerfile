@@ -1,9 +1,15 @@
 # Build stage for Next.js frontend
 FROM node:18-alpine AS frontend-builder
 WORKDIR /app/frontend
+
+# Copy package files first for better caching
 COPY frontend/package*.json ./
 RUN npm install
+
+# Copy frontend files and clean up hidden files
 COPY frontend .
+RUN find . -name "._*" -delete && \
+    find . -name ".DS_Store" -delete
 RUN npm run build
 
 # Final stage
