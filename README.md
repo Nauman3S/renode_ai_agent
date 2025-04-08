@@ -36,10 +36,6 @@ docker-compose up --build
 
 You can also deploy this project to CapRover or a similar container platform. Just push your code to a connected repo and configure the container using the provided `Dockerfile` and `docker-compose.yml`.
 
-## License
-
-MIT License
-
 ---
 
 This project is not officially affiliated with Renode or Antmicro.
